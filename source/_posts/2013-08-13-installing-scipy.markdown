@@ -15,7 +15,7 @@ going well until the time came to install Scipy, Numpy and Matplotlib
 for some python projects I am working on. Normally I use pip and all
 goes well, in this case I was getting all kinds of errors due to the
 compiler configuration not being configured correctly. Luckily someone
-had already solved these problems and packaged them as (homebrew)[http://brew.sh/] 
+had already solved these problems and packaged them as [Homebrew](http://brew.sh/) 
 formulae. I thought I would document the steps in the hopes of saving
 someone else some frustration.
 
