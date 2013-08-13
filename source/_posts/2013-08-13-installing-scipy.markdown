@@ -5,6 +5,7 @@ date: 2013-08-13 11:58
 comments: true
 categories: [admin,OS X, Scipy, Numpy, Matplotlib]
 author: Michael Wilson
+published: true
 ---
 
 I ran into some issues yesterday while setting up a new
