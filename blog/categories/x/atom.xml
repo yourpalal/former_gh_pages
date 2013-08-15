@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: X | Fetch Merge Push]]></title>
+  <link href="http://yourpalal.github.com/blog/categories/x/atom.xml" rel="self"/>
+  <link href="http://yourpalal.github.com/"/>
+  <updated>2013-08-15T12:51:59-06:00</updated>
+  <id>http://yourpalal.github.com/</id>
+  <author>
+    <name><![CDATA[Alex Wilson]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Installing rsruby]]></title>
+    <link href="http://yourpalal.github.com/blog/2013/08/15/installing-rsruby/"/>
+    <updated>2013-08-15T12:31:00-06:00</updated>
+    <id>http://yourpalal.github.com/blog/2013/08/15/installing-rsruby</id>
+    <content type="html"><![CDATA[<p>Here is the steps to install R with brew, and configure rubygem to install
+rsruby succesfully.</p>
+
+<p>``` bash</p>
+
+<h1>Install R using brew</h1>
+
+<p>brew install R</p>
+
+<h1>Symlink to the normal location</h1>
+
+<p>sudo ln -s "/opt/boxen/homebrew/opt/R/R.framework" /Library/Frameworks</p>
+
+<h1>Install rsruby with the following options</h1>
+
+<p>gem install rsruby -- --with-R-dir='/Library/Frameworks/R.framework/Resources' --with-R-include='/Library/Frameworks/R.framework/Resources/include' --with-R-lib='/Library/Frameworks/R.framework/Resources/lib'
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

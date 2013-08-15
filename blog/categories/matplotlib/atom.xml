@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Matplotlib | Fetch Merge Push]]></title>
-  <link href="http://fetchmergepush.ca/blog/categories/matplotlib/atom.xml" rel="self"/>
-  <link href="http://fetchmergepush.ca/"/>
-  <updated>2013-08-13T12:19:30-06:00</updated>
-  <id>http://fetchmergepush.ca/</id>
+  <link href="http://yourpalal.github.com/blog/categories/matplotlib/atom.xml" rel="self"/>
+  <link href="http://yourpalal.github.com/"/>
+  <updated>2013-08-15T12:51:59-06:00</updated>
+  <id>http://yourpalal.github.com/</id>
   <author>
     <name><![CDATA[Alex Wilson]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Installing Scipy on OS X Mountain Lion]]></title>
-    <link href="http://fetchmergepush.ca/blog/2013/08/13/installing-scipy/"/>
+    <link href="http://yourpalal.github.com/blog/2013/08/13/installing-scipy/"/>
     <updated>2013-08-13T11:58:00-06:00</updated>
-    <id>http://fetchmergepush.ca/blog/2013/08/13/installing-scipy</id>
+    <id>http://yourpalal.github.com/blog/2013/08/13/installing-scipy</id>
     <content type="html"><![CDATA[<p>I ran into some issues yesterday while setting up a new
 Macbook for development. I decided to use <a href="http://boxen.github.com/">Boxen</a>
  (more on that in a later post) to set it up and everything was

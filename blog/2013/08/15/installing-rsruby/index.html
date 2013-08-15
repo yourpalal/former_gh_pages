@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Fetch Merge Push</title>
+  <title>Installing rsruby - Fetch Merge Push</title>
   <meta name="author" content="Alex Wilson">
 
   
@@ -28,7 +28,7 @@ brew install R
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://yourpalal.github.com/">
+  <link rel="canonical" href="http://yourpalal.github.com/blog/2013/08/15/installing-rsruby/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -84,15 +84,12 @@ brew install R
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/08/15/installing-rsruby/">Installing Rsruby</a></h1>
+      <h1 class="entry-title">Installing Rsruby</h1>
     
     
       <p class="meta">
@@ -115,7 +112,7 @@ brew install R
   </header>
 
 
-  <div class="entry-content"><p>Here is the steps to install R with brew, and configure rubygem to install
+<div class="entry-content"><p>Here is the steps to install R with brew, and configure rubygem to install
 rsruby succesfully.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -135,22 +132,16 @@ rsruby succesfully.</p>
 </span></code></pre></td></tr></table></div></figure>
 
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/13/installing-scipy/">Installing Scipy on OS X Mountain Lion</a></h1>
-    
-    
-      <p class="meta">
-        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Michael Wilson</span></span>
+
+      
 
 
 
@@ -162,72 +153,38 @@ rsruby succesfully.</p>
   
 
 
-<time datetime="2013-08-13T11:58:00-06:00" pubdate data-updated="true">Aug 13<span>th</span>, 2013</time>
-        
-      </p>
+<time datetime="2013-08-15T12:31:00-06:00" pubdate data-updated="true">Aug 15<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/os/'>OS</a>, <a class='category' href='/blog/categories/r-/'>R,</a>, <a class='category' href='/blog/categories/x/'>X</a>, <a class='category' href='/blog/categories/brew-/'>brew,</a>, <a class='category' href='/blog/categories/ruby-/'>ruby,</a>
+  
+</span>
+
+
+    </p>
     
-  </header>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://yourpalal.github.com/blog/2013/08/15/installing-rsruby/" data-via="" data-counturl="http://yourpalal.github.com/blog/2013/08/15/installing-rsruby/" >Tweet</a>
+  
+  
+  
+</div>
 
-
-  <div class="entry-content"><p>I ran into some issues yesterday while setting up a new
-Macbook for development. I decided to use <a href="http://boxen.github.com/">Boxen</a>
- (more on that in a later post) to set it up and everything was
-going well until the time came to install Scipy, Numpy and Matplotlib
-for some python projects I am working on. Normally I use pip and all
-goes well, in this case I was getting all kinds of errors due to the
-compiler configuration not being configured correctly. Luckily someone
-had already solved these problems and packaged them as <a href="http://brew.sh/">Homebrew</a>
-formulae. I thought I would document the steps in the hopes of saving
-someone else some frustration.</p>
-
-<p>If you haven&#8217;t installed python yet:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># Install python 2.7</span>
-</span><span class='line'>brew install python
-</span><span class='line'><span class="c"># sets up python as default python instead of system python</span>
-</span><span class='line'>brew link python
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Then to setup numpy, scipy and matplotlib using brew:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># Add more brew formulae so we can install our py libs with brew</span>
-</span><span class='line'>brew tap samueljohn/python
-</span><span class='line'>brew tap homebrew/science
-</span><span class='line'>
-</span><span class='line'><span class="c"># install numpy and dependencies ( gfortran, etc.. )</span>
-</span><span class='line'>brew install numpy
-</span><span class='line'>brew install scipy
-</span><span class='line'>brew insatll matplotlib
-</span></code></pre></td></tr></table></div></figure>
-
-
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/08/13/installing-scipy/" title="Previous Post: Installing Scipy on OS X Mountain Lion">&laquo; Installing Scipy on OS X Mountain Lion</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
 </div>
-  
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -252,6 +209,7 @@ someone else some frustration.</p>
 
   
 </aside>
+
 
     </div>
   </div>

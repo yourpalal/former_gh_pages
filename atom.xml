@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Fetch Merge Push]]></title>
-  <link href="http://fetchmergepush.ca/atom.xml" rel="self"/>
-  <link href="http://fetchmergepush.ca/"/>
-  <updated>2013-08-13T12:19:30-06:00</updated>
-  <id>http://fetchmergepush.ca/</id>
+  <link href="http://yourpalal.github.com/atom.xml" rel="self"/>
+  <link href="http://yourpalal.github.com/"/>
+  <updated>2013-08-15T12:51:59-06:00</updated>
+  <id>http://yourpalal.github.com/</id>
   <author>
     <name><![CDATA[Alex Wilson]]></name>
     
@@ -14,10 +14,37 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Installing rsruby]]></title>
+    <link href="http://yourpalal.github.com/blog/2013/08/15/installing-rsruby/"/>
+    <updated>2013-08-15T12:31:00-06:00</updated>
+    <id>http://yourpalal.github.com/blog/2013/08/15/installing-rsruby</id>
+    <content type="html"><![CDATA[<p>Here is the steps to install R with brew, and configure rubygem to install
+rsruby succesfully.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># Install R using brew</span>
+</span><span class='line'>brew install R
+</span><span class='line'><span class="c"># Symlink to the normal location</span>
+</span><span class='line'>sudo ln -s <span class="s2">&quot;/opt/boxen/homebrew/opt/R/R.framework&quot;</span> /Library/Frameworks
+</span><span class='line'>
+</span><span class='line'><span class="c"># Install rsruby with the following options</span>
+</span><span class='line'>gem install rsruby -- --with-R-dir<span class="o">=</span><span class="s1">&#39;/Library/Frameworks/R.framework/Resources&#39;</span> --with-R-include<span class="o">=</span><span class="s1">&#39;/Library/Frameworks/R.framework/Resources/include&#39;</span> --with-R-lib<span class="o">=</span><span class="s1">&#39;/Library/Frameworks/R.framework/Resources/lib&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Installing Scipy on OS X Mountain Lion]]></title>
-    <link href="http://fetchmergepush.ca/blog/2013/08/13/installing-scipy/"/>
+    <link href="http://yourpalal.github.com/blog/2013/08/13/installing-scipy/"/>
     <updated>2013-08-13T11:58:00-06:00</updated>
-    <id>http://fetchmergepush.ca/blog/2013/08/13/installing-scipy</id>
+    <id>http://yourpalal.github.com/blog/2013/08/13/installing-scipy</id>
     <content type="html"><![CDATA[<p>I ran into some issues yesterday while setting up a new
 Macbook for development. I decided to use <a href="http://boxen.github.com/">Boxen</a>
  (more on that in a later post) to set it up and everything was
