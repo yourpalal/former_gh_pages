@@ -20,3 +20,10 @@ sudo ln -s "/opt/boxen/homebrew/opt/R/R.framework" /Library/Frameworks
 # Install rsruby with the following options
 gem install rsruby -- --with-R-dir='/Library/Frameworks/R.framework/Resources' --with-R-include='/Library/Frameworks/R.framework/Resources/include' --with-R-lib='/Library/Frameworks/R.framework/Resources/lib'
 ```
+
+Then you need to add the following to your .bashrc file ( or similar )
+in order for rsruby to work in scripts
+
+``` bash
+export R_HOME=/Library/Frameworks/R.framework/Resources
+```
