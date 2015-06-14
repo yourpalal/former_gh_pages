@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1 initial-scale=1 user-scalable=no"/>
+
+	<title>Spin Cycle</title>
+	<link rel="stylesheet" href="style.css">
+	<script data-main="main.js" type="text/javascript" src="require.js"></script>
+</head>
+
+<body>
+
+
+<div id="clickableArea">
+	<canvas id="canvas-bg" height="800" width="800"></canvas>
+	<canvas id="canvas-fg" height="800" width="800"></canvas>
+</div>
+
+<div class="drawer" id="mainDrawer">
+
+	<img width="217" height="100" src="logo.png"/>
+
+	<nav>
+		<ul>
+			<li selected data-tab="gameSelection">New Game</li>
+			<li data-tab="creditsTab">Credits </li>
+
+			<li class="modal" data-tab="gameOverTab">Game Over</li>
+			<li class="modal" data-tab="pausedTab">Paused</li>
+		</ul>
+	</nav>
+
+	<ul id="gameSelection" class="tab">
+		<li selected>
+			<div class="description">
+	Race against the clock to clear a path through the spinners!
+	Click to stop the active spinner (drawn in red) from rotating.
+	If you stop the active spinner under the timer bar, you lose.
+	Stop the spinners faster for a bonus!
+			</div>
+	
+			<ul class="modes">
+				<li id="newGame-classic-easy">
+					<div class="logo easy"></div>
+					<h4>Easy</h4>
+					<div id="scoretable_easy"></div>
+				</li>
+				<li id="newGame-classic-medium">
+					<div class="logo medium"></div>
+					<h4>Medium</h4>
+					<div id="scoretable_medium"></div>
+				</li>
+				<li id="newGame-classic-hard">
+					<div class="logo hard"></div>
+					<h4>Hard</h4>
+					<div id="scoretable_hard"></div>
+				</li>
+				<li id="newGame-classic-infinite">
+					<div class="logo infinite"></div>
+					<h4>Infinite</h4>
+					<div id="scoretable_infinite"></div>
+				</li>
+			</ul>
+		</li>
+	
+	</ul>
+
+	<div id="creditsTab" class="tab" style="display: none;">
+		<p>Copyright &copy; Alex Wilson 2011-2013<p>
+		<p><a href="http://hipposociety.com">hipposociety.com</a></p>
+		<p>Dedicated to Alysha, Santos, and Satchmo</p>
+		<p>our eden</p>
+	</div>
+
+	<div id="gameOverTab" class="tab" style="display: none;">
+		<h4 class="message">Game over dood</h4>
+		<div class="score col">
+			<div class="score" id="gameOverTab-totalScore"></div>
+			<h3>Your Score</h3>
+		</div>
+
+		<div class="col">
+			<span id="gameOverTab-comparator">&lt;</span>
+		</div>
+
+		<div class="score col">
+			<div class="score" id="gameOverTab-highScore"></div>
+			<h3>High Score</h3>
+		</div>
+
+		<button type="button" id="gameOverTab-tryAgain">Try Again</button>
+	</div>
+
+	<div id="pausedTab" class="tab" style="display: none;">
+		<h4>Your game is paused.</h4>
+		<button type="button" id="unpauseButton">Unpause</button>
+	</div>
+
+</div>
+
+<div class="drawer" id="scoreDrawer">
+	<div class="col">
+		<span id="pauseButton">pause</span>
+	</div>
+
+	<div class="col">
+		<span id="scoreDrawer-mode"></span>
+	</div>
+
+	<div class="col">
+		<ul style="float: right">
+			<li><b>Spinners:</b><span id="spinner-score">  </span></li>
+			<li><b>Time:</b><span id="time-bonus">  </span></li>
+		</ul>
+	</div>
+</div>
+
+</body>
+</html>

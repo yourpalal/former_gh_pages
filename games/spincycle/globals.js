@@ -1,0 +1,1 @@
+require(["underscore"],function(e){window.drawer=null,window.scoreTable=null,window.twoPI=Math.PI*2,window.onPointerDown=null,window.inherits=function(t,n){return e.defaults(t.prototype,n.prototype),t},window.spinnerCenter={x:0,y:0}});

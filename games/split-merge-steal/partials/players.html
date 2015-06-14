@@ -1,0 +1,36 @@
+<ul class="player-list">
+	<a class="act-add" ng-if="canAddRemove" ng-click="addPlayer()">
+		+ add player
+	</a>
+
+	<li class="player" ng-repeat="player in players"
+						ng-click="selectPlayer($index)"
+						ng-dblclick="startEditing($index)"
+						ng-class="{editing: editing == $index}"
+						ng-style="{'background-color': player.color}">
+		<a class="act-remove" ng-if="canAddRemove" ng-click="removePlayer($index)">
+			-
+		</a>
+
+		<span ng-if="editing != $index">
+			<span ng-style="{visibility: playerVisibility(player)}">☆</span>
+			{{player.name}}
+		</span>
+		<div class="editor" ng-if="editing == $index">
+			<span ng-style="{visibility: playerVisibility(player)}">☆</span>
+			<input type="text" ng-model="player.name"></input>
+			<ul class="clean color-picker">
+				<li class="color" ng-repeat="color in colors"
+					ng-style="{
+						'background-color': color,
+						'clear': colorClear($index)
+					}"
+					ng-click="selectColor(color)">
+				</li>
+			</ul>
+			<button ng-click="doneEditing()">done</button>
+		</div>
+		<div class="clear" ng-transclude>
+		</div>
+	</li>
+</ul>

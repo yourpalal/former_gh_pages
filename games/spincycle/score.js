@@ -1,0 +1,1 @@
+define(["backbone"],function(e){return e.Model.extend({defaults:{ringsCleared:0,timeBonus:0},total:function(){return this.get("ringsCleared")*30+this.get("timeBonus")}})});

@@ -1,0 +1,228 @@
+* {
+	
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 13px;
+	margin: 0;
+	padding: 0;	
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+button {
+	padding: 5px 5px 5px 5px;
+}
+html {
+	height: 100%;
+	width: 100%;
+}
+body {
+	height: 100%;
+	width: 100%;
+}
+.drawer {
+	padding: 5px 5px 5px 5px;
+	width : 100%;
+	position: relative;
+	-webkit-transition:all 1s ease-in-out;
+	-moz-transition:all 1s ease-in-out;
+	-o-transition:all 1s ease-in-out;
+	-ms-transition:all 1s ease-in-out;
+	transition:all 1s ease-in-out;
+	background-image: url(office.png);
+	color: white;
+}
+.drawer > img {
+	display: block;
+	margin: 1em auto;
+}
+.drawer nav {
+	text-align: center;
+	width: 90%;
+	margin-left: 5%;
+	padding-bottom: 3em;
+}
+.drawer nav ul {
+	margin: 0 auto;
+}
+.drawer nav li {
+	padding: 0 0.5em 0 0.5em;
+	float: left;
+	display: block;
+}
+.drawer nav .modal {
+	float: right;
+	display: none;
+}
+.drawer nav li[selected] {
+	border-bottom: 5px solid white;
+}
+#mainDrawer {
+	z-index: 2;
+	border-bottom: 1px solid gray;
+}
+#scoreDrawer {
+	border-top: 1px solid #C0C0C0;
+	height: 20px;
+	z-index: 1;
+	text-align: center;
+	vertical-align: middle;
+	-webkit-box-shadow: 0 5px 10px #ccc;
+	-moz-box-shadow: 0 5px 10px #ccc;
+	box-shadow: 0 5px 10px #ccc;
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	-ms-transform: translateY(-100%);
+	-o-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
+.col {
+	display: block;
+	width: 33%;
+	margin: 0;
+	float: left;
+}
+#scoreDrawer-mode {
+	font-size: 18px;
+}
+#scoreDrawer ul {
+	float: right;
+}
+#scoreDrawer li {
+	display: inline;
+}
+#pauseButton {
+	float: left;
+}
+#clickableArea {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height : 800px;
+	width : 800px;
+	float : left;
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+}
+#gameSelection {
+	display: block;
+	width: 400px;
+	margin: 0 auto;
+	list-style: none;
+}
+#gameSelection .description {
+	max-width: 45em;
+}
+#gameSelection .modes {
+	float: left;
+}
+#gameSelection > li {
+	display: block;
+	clear: left;
+}
+.modes li {
+	display: block;
+	width:	100px;
+	float: left;
+	margin: 1em 1em 1em 3em;
+	padding: 0;
+	text-align: center;
+}
+.modes li:first-child {
+	margin-left: 0;
+}
+.modes li h4 {
+	text-align: center;
+	display: block;
+	width: 100%;
+}
+.logo {
+	margin: 0 auto;
+	width: 90px;
+	height: 90px;
+	display: block;
+	background-color: white;
+	border: thin solid gray;
+	border-radius: 45px 45px 45px 45px;
+	background-image: url(mode_logos.png);
+}
+.logo.easy {
+	background-position: 0 0;
+}
+.logo.medium {
+	background-position: -90px 0;
+}
+.logo.hard {
+	background-position: -180px 0;
+}
+.logo.infinite {
+	background-position: -270px 0;
+}
+#gameSelection {
+	width: 90%;
+	height: auto;
+	overflow: auto;
+}
+#gameSelection ul li {
+	display: block;
+}
+#gameOverTab {
+	text-align: center;
+	width: 300px;
+	margin: 0 auto;
+	overflow: auto;
+}
+#gameOverTab .score {
+	text-align: center;
+	color: white;
+	width: 100px;
+}
+#gameOverTab .score .score {
+	font-size: 200%;
+	font-weight: bold;
+	text-align: center;
+	height: 100px;
+	line-height: 100px;
+	width: 100px;
+	background-color: white;
+	color: black;
+	border-radius: 50px;
+	float: left;
+}
+#gameOverTab-tryAgain {
+	width: 80%;
+	clear: both;
+	margin: 1em auto;
+}
+.score.right {
+	float: right;
+}
+#gameOverTab-comparator {
+	float: left;
+	width: 100px;
+	height: 120px;
+	line-height: 120px;
+	font-size: 250%;
+}
+#pausedTab, #creditsTab {
+	width: 90%;
+	margin: 1em auto;
+	text-align: left;
+}
+#pausedTab h4 {
+	text-align: center;
+}
+#unpauseButton {
+	display: block;
+	margin: 1em auto;
+}

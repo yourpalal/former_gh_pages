@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+
+	<script src="lib/jquery.js"></script>
+	<script src="lib/angular.js"></script>
+	<script src="lib/angular-sanitize.js"></script>
+	<script src="lib/underscore.js"></script>
+	<script src="lib/markdown.js"></script>
+	<script data-main="js/main.js" src="lib/require.js"></script>
+	<link rel="stylesheet" type="text/css" href="style/application.css">
+</head>
+<body ng-controller="AppCtrl">
+
+	<div class="game-actions">
+		<a class="act-list" ng-click="views.toggle('select')">
+			<span>select a game</span>
+		</a>
+	</div>
+
+<article class="game-select" ng-controller="GameCtrl" ng-show="views.shown('select')"><div>
+	<section>
+		<header>
+			select a game
+		</header>
+		<ul>
+			<li ng-repeat="game in games" ng-click="investigate(game)"
+				ng-class="{'investigating': investigating==game}">
+				{{game.name}}
+			</li>
+		</ul>
+		<form ng-submit="loadGame()">
+			<label><span>to</span>
+				add a game,
+				<span>paste it below</span><a href="#" class="help" title="Anyone can make a game and share it with you by using the exporter in the game editor!">?</a>
+				<input type="text" ng-model='create.game_def'>
+			</label>
+			<input type="submit" value="+">
+		</form>
+	</section>
+
+	<section ng-show="investigating != null" ng-init="showDelete=false">
+		<header>{{investigating.name}}
+			<ul class="game-actions">
+				<li><a title="play" class="act-play" ng-click="playGame(investigating)"><span>play</span></a></li>
+				<li><a title="edit" class="act-edit" ng-click="editGame(investigating)">
+								<span>edit</span></a></li>
+				<li><a title="copy" class="act-copy" ng-click="copyGame(investigating)"><span>copy</span></a></li>
+				<li><a title="delete" class="act-delete" ng-click="showDelete=true"><span>delete</span></a></li>
+			</ul>
+		</header>
+		<div class="delete" ng-show="showDelete">
+			<p>Delete {{investigating.name}}?</p>
+			<button ng-click="deleteGame(investigating); showDelete = false">
+				yes</button>
+			<button ng-click="showDelete=false">no</button>
+		</div>
+		<div class="rules" ng-hide="showDelete">
+			<marked-down text="investigating.rules">
+			</marked-down>
+		</div>
+	</section>
+</div></article>
+
+<article class="game" ng-controller="BoardCtrl"
+	ng-if="views.shown('play')"
+	ng-init="showHelp=false">
+
+	<pop-up is-visible="showHelp">
+			Each move displays a live preview as you move your mouse across the
+			board.
+
+			<dl><dt>bomb</dt>
+				<dd>Click on the bomb to toggle bombing mode. Selecting
+				a block will split it into small blocks and make one small
+				block unavailable for the rest of the game.</dd>
+				<dt>split</dt>
+				<dd>Click on a block and then click again within it 
+					to split the block into smaller blocks</dd>
+				<dt>merge</dt>
+				<dd>Click on a block and then click on another adjacent
+					block of same or smaller dimensions.</dd>
+				<dt>steal</dt>
+				<dd>Click on a block and then click on another player's
+					block of equal dimensions.</dd>
+			</dl>
+		</p>
+	</pop-up>
+	<header>{{selected.game.name}}
+		<ul class="game-actions">
+			<li><a class="act-play" title="new game" ng-click="resetGame()"><span>play</span></a></li>
+			<li><a class="help invert" ng-click="showHelp=!showHelp">?</a></li>
+		</ul>
+	</header>
+	<section class="meta">
+		<ul>
+			<li><a class="undo" title="undo"
+					ng-class="{inactive: !history.undoAvailable()}"
+					ng-click="undo()"></a></li>
+			<li><a ng-click="toggleBombing()" title="bomb"
+					ng-class="{
+						'bomb-active': bombing,
+						'bomb-inactive': !bombing}"
+				></a></li>
+		</ul>
+		<ul class="history">
+			<li ng-repeat="action in history.actions track by $id(action)" t>
+				{{action.action}}
+				<div ng-repeat="player in action.players"
+					ng-style="{'background-color': player.color}">
+				</div>
+			</li>
+		</ul>
+	</section>
+
+	<game-board width="300" height="300"
+		hspace="10" vspace="10" board="board"
+		get-color="getColor"
+		mode="current.mode"
+		on-action="history.makeHistory(board_before, action)">
+	</game-board>
+
+	
+	<section>
+		<ul class="players">
+		<li ng-repeat="player in players" class="{{player.color}}">
+			<input type="text" ng-model="player.name">
+			<ul class="colours" ng-init="colors=['purple', 'orange', 'red', 'blue', 'green', 'yellow']">
+				<li class="{{color}}" ng-repeat="color in colors"
+					ng-click="player.color = color"></li>
+			</ul>
+		</li>
+		</ul>
+
+		<div class="rules">
+			<marked-down text="selected.game.rules">
+			</marked-down>
+		</div>
+	</section>
+</article>
+
+<article class="editor" ng-controller="EditCtrl" ng-show="views.shown('edit')">
+	<pop-up is-visible="popup.visible">
+		<p>Copy and paste this text to the internetzz to share your
+			creation with friends and strangers!</p>
+		<textarea class="game-def" rows="10" ng-bind="selected.game.saveToString()">
+		</textarea>
+	</pop-up>
+
+	<div class="export">
+		<a ng-click="popup.visible=true" title="export">export this game</a>
+	</div>
+	<input id="edit-game-name" type="text" ng-model="edit.game.name">
+	<div class="help-block">Determine the starting board configuration and the number and initial color/names of the players.</div>
+
+	<section class="meta">
+		<ul>
+			<li><a ng-click="toggleBombing()" title="bomb"
+					ng-class="{
+						'bomb-active': inMode('bomb'),
+						'bomb-inactive': !inMode('bomb')}"
+				></a></li>
+
+			<li ng-repeat="player in edit.game.players" class="paint-brush"
+				ng-class="{'selected': playerSelected($index)}"
+				ng-style="{'background-color': player.color}"><a
+				title="assign blocks to player {{$index + 1}}"
+				ng-click="togglePlayerSelected($index)"
+			></a></li>
+		</ul>
+	</section>
+
+	<div class="board-setup">
+		<label class="left">width
+			<number-picker max="10"
+			num-model="edit.board_width"></number-picker>
+		</label>
+		<label class="left left-gutter">height
+			<number-picker max="10"
+			num-model="edit.board_height"></number-picker>
+		</label>
+		<game-board ng-if="edit.game.board"
+			get-color="edit.getColor"
+			selected-player="edit.selectedPlayer"
+			width="300" height="300" 
+			hspace="10" vspace="10"
+			board="edit.game.board"
+			mode="edit.mode"
+			>
+		</game-board>
+	</div>
+
+
+	<section>
+		<ul class="players">
+		<li ng-repeat="player in edit.game.players" class="{{player.color}}">
+			<input type="text" ng-model="player.name">
+			<ul class="colours" ng-init="colors=['purple', 'orange', 'red', 'blue', 'green', 'yellow']">
+				<li class="{{color}}" ng-repeat="color in colors"
+					ng-click="player.color = color"></li>
+			</ul>
+		</li>
+		</ul>
+
+		<textarea rows="18" cols="40" name="edit-game-rules"
+			ng-model="edit.game.rules" class="form-control">
+		</textarea>
+		<p class="help-block">  This text will be processed by <a href="http://daringfireball.net/projects/markdown/">markdown</a>.
+		</p>
+	</section>
+</article>
+
+	<footer>
+		for my buddy<br/>
+		by <a href="http://hipposociety.com">Alex Wilson</a>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<div class="board"
+	ng-mousedown="mousedown($event)" ng-mousemove="mousemove($event)"
+	ng-style="{
+		'width': width + 'px',
+		'height': height + 'px'
+	}">
+	<div class="block"
+		ng-repeat="block in board.uniqueBlocks()"
+		ng-class="gfx.board.css_classes(block)"
+		ng-style="gfx.board.style(block)"
+		>
+	</div>
+	<div class="block"
+		ng-repeat="block in changed_blocks"
+		ng-class="gfx.changed.css_classes(block)"
+		ng-style="gfx.changed.style(block)"
+		>
+	</div>
+</div>
