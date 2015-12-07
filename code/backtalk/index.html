@@ -1,0 +1,32 @@
+<!DOCTYPE HTML><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1" /><!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script><![endif]--><link href='http://fonts.googleapis.com/css?family=Raleway|Dosis' rel='stylesheet' type='text/css'><link rel="stylesheet" href="/application.css" /><title>BackTalk - HippoSociety.com</title></head><body><div id="skiptocontent"><a href="#main">skip to main content</a></div><header role="banner"><h1><a href="/">Hippo Society</a></h1></header><div class="outer"><aside class="sidebar"><nav><ul><li><a href="/category/projects/">Projects</a><ul><li><a href="/code/backtalk/">BackTalk</a></li><li><a href="/code/shake-stick/">Shake Stick</a></li><li><a href="/code/cryssake/">cryssake</a></li><li><a href="/code/zap/">ZAP</a></li><li><a href="/code/haiku/">Haiku</a></li></ul></li><li><a href="/category/toys/">Toys</a><ul><li><a href="/sounds-of-jelly/">Sounds of Jelly</a></li><li><a href="/split-merge-steal/">Split Merge Steal</a></li><li><a href="/please-play-again/">Please Play Again</a></li><li><a href="/spincycle/">Spincycle</a></li></ul></li><li><a href="/category/examples/">Code Samples</a><ul><li><a href="/code/es_indexer/">Elasticsearch Indexer</a></li><li><a href="/code/pi-experiments/">Pi Expirements</a></li><li><a href="/code/polling-thing/">GitHub Issue Poller</a></li></ul></li></ul></nav></aside><main id="main" role="main"><article>		<header class="post-header"><h1><a href="/code/backtalk/">BackTalk</a></h1><nav><span class="related"><a href="https://bitbucket.org/yourpalal/backtalk">GitHub</a> | <a href="https://www.npmjs.com/package/backtalk">npm</a></span><span class="categories">in <a href="/category/projects/">projects</a></span></nav></header><div class="content"><p>BackTalk is a programming language designed to provide simple points of configuration or interaction within a larger piece of software. For instance, it could be used to allow a user to add custom behaviour to
+a button in a WYSIWYG website editor.</p>
+<p>The syntax is designed to be expressive and also natural. It is also very simple, and can be easily remembered. Variables start with a &quot;$&quot; and function calls look like natural language. Here is an example of a small script you could write and execute with BackTalk:</p>
+<pre><code>-- this is a comment
+with $color as &quot;orange&quot;
+set the background color to $color
+</code></pre><p>A more complicated script could look something like this:</p>
+<pre><code>with $all_words as (an empty set)
+
+for each $word in the text:
+    with $lowered as (convert $word to lowercase)
+    add $lowered to $all_words
+
+show message:
+    &quot;there are&quot;
+    (length of $all_words)
+    &quot;words in the text&quot;
+</code></pre><p>Many of the functions in the samples above would be expected to be written
+by the BackTalk embedder.</p>
+<p>The embedder can write functions that execute asynchronously, create loops, modify and access the surrounding scope, and also run whatever JavaScript
+behaviours are desired. Any function which returns a <a href="https://promisesaplus.com/">Promise</a> will pause the BackTalk VM until the promise is resolved. This is done transparently, allowing for complex async behaviours to appear as simple, synchronous scripts.</p>
+<pre><code>with $user_info as (GET &quot;/user/3&quot;)
+with $posts as (GET (attribute &quot;posts_url&quot; of $user_info))
+
+-- let&#39;s say this renders the template using the scope Variables
+-- set up in the block below it
+render template &quot;posts_index.html&quot;:
+    with $user as $user_info
+    with $posts as $posts
+</code></pre><p>As you can see, BackTalk code sometimes looks a bit <a href="https://en.wikipedia.org/wiki/Lisp">lisp</a>y. The whole project is still a bit rough around the edges, but it uses a <a href="https://en.wikipedia.org/wiki/Parsing_expression_grammar">PEG</a> to
+parse the input, has a real <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">AST</a>, and uses a simple VM to run the code. The whole project is written in <a href="http://www.typescriptlang.org/">TypeScript</a>, Microsoft&#39;s static-typed superset of ECMAScript 6, and is well tested.</p>
+</div></article></main></div><footer><div><a class="about" href="/about">about</a><a class="github" href="http://github.com/yourpalal">github</a><a class="bitbucket" href="http://bitbucket.org/yourpalal">bitbucket</a></div><p>copyright Alex Wilson 2013-15</p></footer></body></html>
