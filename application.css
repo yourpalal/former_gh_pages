@@ -398,8 +398,9 @@ article {
     article .content img.icon {
       float: right;
       margin-top: 0.2em; }
+    article .content pre > code {
+      display: block; }
     article .content code {
-      display: block;
       background-color: #F0F0F0;
       padding: 0.5em;
       border-radius: 5px;
