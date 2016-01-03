@@ -256,26 +256,43 @@ body {
   margin: 0;
   width: 100%; }
   body > header {
-    background-image: url(/resource/colourful.png);
-    background-size: cover;
-    padding: 2em 0;
-    text-align: center; }
+    text-align: center;
+    overflow: auto; }
     body > header a {
-      color: white; }
-    body > header h1 {
-      display: block; }
-      @media screen and (min-width: 50em) {
+      color: black; }
+    @media screen and (min-width: 50em) {
+      body > header {
+        max-width: 68em;
+        margin-left: auto;
+        margin-right: auto;
+        margin: 2em auto 0 auto;
+        text-align: left; }
+        body > header:after {
+          content: "";
+          display: table;
+          clear: both; }
         body > header h1 {
-          height: 70px;
+          padding: 0em 0.3em;
           line-height: 70px;
-          color: white; } }
+          text-align: left; } }
+    body > header:after {
+      content: '';
+      display: block;
+      margin: 1em auto 0 auto;
+      padding: 1em 0 0 0;
+      background-image: url(/resource/colourful.png);
+      background-size: cover;
+      clear: both; }
+    body > header h1 {
+      background-color: white;
+      display: inline; }
       body > header h1 > a:before {
         content: '';
         display: block;
         margin: 0 auto;
         height: 70px;
         width: 70px;
-        background-size: 70px auto;
+        background-size: auto 70px;
         background-image: url(/resource/icon-bw.png);
         background-position: left center;
         background-repeat: no-repeat; }
@@ -284,6 +301,16 @@ body {
             vertical-align: top;
             margin: 0;
             display: inline-block; } }
+    body > header > a {
+      height: 40px;
+      margin-top: 15px;
+      margin-right: 20px;
+      white-space: nowrap;
+      display: inline-block;
+      overflow: hidden; }
+      @media screen and (min-width: 50em) {
+        body > header > a {
+          float: right; } }
 
 .sidebar li {
   margin-left: 5em; }
@@ -392,6 +419,8 @@ article {
       background-size: cover;
       background-image: url(/resource/colourful.png);
       clear: left; }
+    article > header h1 a {
+      color: black; }
   article .content {
     color: black;
     margin-top: 0.3em; }
@@ -407,50 +436,9 @@ article {
       color: #6153CC;
       font: monospace; }
 
-body > footer {
-  margin: 5em auto 3em auto;
-  padding: 2em 0;
-  background-image: url(/resource/colourful.png);
-  background-size: cover;
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto;
-  color: white; }
-  body > footer:after {
-    content: "";
-    display: table;
-    clear: both; }
-  body > footer p, body > footer div {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 100%;
-    text-align: center; }
-    body > footer p:last-child, body > footer div:last-child {
-      margin-right: 0; }
-  @media screen and (min-width: 50em) {
-    body > footer p, body > footer div {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 48.82117%; }
-      body > footer p:last-child, body > footer div:last-child {
-        margin-right: 0; }
-    body > footer p {
-      text-align: left; }
-    body > footer div {
-      text-align: right; } }
-  body > footer p {
-    height: 40px;
-    line-height: 40px; }
-  body > footer a {
-    height: 40px;
-    margin-right: 20px;
-    white-space: nowrap;
-    display: inline-block;
-    overflow: hidden; }
-    body > footer a:last-child {
-      margin-right: 0; }
+footer {
+  text-align: center;
+  padding: 1em; }
 
 .about {
   width: 33px; }
@@ -459,7 +447,7 @@ body > footer {
     display: inline-block;
     height: 40px;
     width: 33px;
-    background-image: url(/resource/logos.png);
+    background-image: url(/resource/logos-dark.png);
     background-size: auto 40px;
     background-position: 0 0;
     background-repeat: no-repeat; }
@@ -471,7 +459,7 @@ body > footer {
     display: inline-block;
     height: 40px;
     width: 48px;
-    background-image: url(/resource/logos.png);
+    background-image: url(/resource/logos-dark.png);
     background-size: auto 40px;
     background-position: -34px 0;
     background-repeat: no-repeat; }
@@ -483,7 +471,7 @@ body > footer {
     display: inline-block;
     height: 40px;
     width: 43px;
-    background-image: url(/resource/logos.png);
+    background-image: url(/resource/logos-dark.png);
     background-size: auto 40px;
     background-position: -82px 0;
     background-repeat: no-repeat; }
@@ -495,7 +483,7 @@ body > footer {
     display: inline-block;
     height: 40px;
     width: 35px;
-    background-image: url(/resource/logos.png);
+    background-image: url(/resource/logos-dark.png);
     background-size: auto 40px;
     background-position: -124px 0;
     background-repeat: no-repeat; }
