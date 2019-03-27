@@ -3,18 +3,18 @@
 
 button,
 input[type="submit"] {
-  border: 1px solid #1e4885;
+  border: 1px solid #2459a6;
   border-radius: 3px;
-  box-shadow: inset 0 1px 0 0 #6d93ca;
+  box-shadow: inset 0 1px 0 0 #89a8d5;
   color: white;
   display: inline-block;
   font-size: inherit;
   font-weight: bold;
-  background-color: #3569b5;
-  background-image: linear-gradient(#3569b5, #204e92);
+  background-color: #477DCA;
+  background-image: linear-gradient(#477DCA, #2760b2);
   padding: 7px 18px;
   text-decoration: none;
-  text-shadow: 0 1px 0 #163e79;
+  text-shadow: 0 1px 0 #1b4f9a;
   background-clip: padding-box;
   -webkit-font-smoothing: antialiased;
   font-size: 1em;
@@ -22,15 +22,15 @@ input[type="submit"] {
   line-height: 1em; }
   button:hover:not(:disabled),
   input[type="submit"]:hover:not(:disabled) {
-    box-shadow: inset 0 1px 0 0 #4677bd;
+    box-shadow: inset 0 1px 0 0 #628cc8;
     cursor: pointer;
-    background-color: #335e9d;
-    background-image: linear-gradient(#335e9d, #1e4884); }
+    background-color: #3c71bb;
+    background-image: linear-gradient(#3c71bb, #255aa5); }
   button:active:not(:disabled),
   input[type="submit"]:active:not(:disabled), button:focus:not(:disabled),
   input[type="submit"]:focus:not(:disabled) {
-    border: 1px solid #1e4885;
-    box-shadow: inset 0 0 8px 4px #1c4177, inset 0 0 8px 4px #1c4177; }
+    border: 1px solid #2459a6;
+    box-shadow: inset 0 0 8px 4px #235397, inset 0 0 8px 4px #235397; }
   button:disabled,
   input[type="submit"]:disabled {
     opacity: 0.5;
@@ -71,14 +71,14 @@ p {
   margin: 0 0 0.75em; }
 
 a {
-  color: #3569b5;
+  color: #477DCA;
   text-decoration: none;
   transition: color 0.1s linear; }
   a:hover {
-    color: #24477a; }
+    color: #2c5999; }
   a:active, a:focus {
-    color: #24477a;
-    outline: thin dashed #24477a; }
+    color: #2c5999;
+    outline: none; }
 
 hr {
   border-bottom: 1px solid #DDD;
@@ -159,8 +159,8 @@ select[multiple=multiple] {
   textarea:focus,
   input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
   select[multiple=multiple]:focus {
-    border-color: #3569b5;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(47, 94, 161, 0.7);
+    border-color: #477DCA;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(55, 112, 192, 0.7);
     outline: none; }
 
 textarea {
@@ -241,16 +241,6 @@ dl {
   dl dd {
     margin: 0; }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0; }
-
 #skiptocontent a {
   padding: 10px;
   position: absolute;
@@ -266,43 +256,26 @@ body {
   margin: 0;
   width: 100%; }
   body > header {
-    text-align: center;
-    overflow: auto; }
+    background-image: url(/resource/colourful.png);
+    background-size: cover;
+    padding: 2em 0;
+    text-align: center; }
     body > header a {
-      color: black; }
-    @media screen and (min-width: 50em) {
-      body > header {
-        max-width: 68em;
-        margin-left: auto;
-        margin-right: auto;
-        margin: 2em auto 0 auto;
-        text-align: left; }
-        body > header:after {
-          content: "";
-          display: table;
-          clear: both; }
-        body > header h1 {
-          padding: 0em 0.3em;
-          line-height: 70px;
-          text-align: left; } }
-    body > header:after {
-      content: '';
-      display: block;
-      margin: 1em auto 0 auto;
-      padding: 1em 0 0 0;
-      background-image: url(/resource/colourful.png);
-      background-size: cover;
-      clear: both; }
+      color: white; }
     body > header h1 {
-      background-color: white;
-      display: inline; }
+      display: block; }
+      @media screen and (min-width: 50em) {
+        body > header h1 {
+          height: 70px;
+          line-height: 70px;
+          color: white; } }
       body > header h1 > a:before {
         content: '';
         display: block;
         margin: 0 auto;
         height: 70px;
         width: 70px;
-        background-size: auto 70px;
+        background-size: 70px auto;
         background-image: url(/resource/icon-bw.png);
         background-position: left center;
         background-repeat: no-repeat; }
@@ -311,16 +284,6 @@ body {
             vertical-align: top;
             margin: 0;
             display: inline-block; } }
-    body > header > a {
-      height: 40px;
-      margin-top: 15px;
-      margin-right: 20px;
-      white-space: nowrap;
-      display: inline-block;
-      overflow: hidden; }
-      @media screen and (min-width: 50em) {
-        body > header > a {
-          float: right; } }
 
 .sidebar li {
   margin-left: 5em; }
@@ -417,11 +380,9 @@ article {
     text-align: left;
     color: black; }
     article > header .categories {
-      float: left;
-      margin-left: 0.1em; }
-    article > header aside {
-      float: right;
-      margin-right: 0.1em; }
+      float: left; }
+    article > header .related {
+      float: right; }
     article > header::after {
       content: ".";
       color: white;
@@ -431,13 +392,9 @@ article {
       background-size: cover;
       background-image: url(/resource/colourful.png);
       clear: left; }
-    article > header h1 a {
-      color: black; }
   article .content {
     color: black;
     margin-top: 0.3em; }
-    article .content a {
-      text-decoration: underline; }
     article .content img.icon {
       float: right;
       margin-top: 0.2em; }
@@ -450,9 +407,50 @@ article {
       color: #6153CC;
       font: monospace; }
 
-footer {
-  text-align: center;
-  padding: 1em; }
+body > footer {
+  margin: 5em auto 3em auto;
+  padding: 2em 0;
+  background-image: url(/resource/colourful.png);
+  background-size: cover;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  color: white; }
+  body > footer:after {
+    content: "";
+    display: table;
+    clear: both; }
+  body > footer p, body > footer div {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    text-align: center; }
+    body > footer p:last-child, body > footer div:last-child {
+      margin-right: 0; }
+  @media screen and (min-width: 50em) {
+    body > footer p, body > footer div {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%; }
+      body > footer p:last-child, body > footer div:last-child {
+        margin-right: 0; }
+    body > footer p {
+      text-align: left; }
+    body > footer div {
+      text-align: right; } }
+  body > footer p {
+    height: 40px;
+    line-height: 40px; }
+  body > footer a {
+    height: 40px;
+    margin-right: 20px;
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden; }
+    body > footer a:last-child {
+      margin-right: 0; }
 
 .about {
   width: 33px; }
@@ -461,7 +459,7 @@ footer {
     display: inline-block;
     height: 40px;
     width: 33px;
-    background-image: url(/resource/logos-dark.png);
+    background-image: url(/resource/logos.png);
     background-size: auto 40px;
     background-position: 0 0;
     background-repeat: no-repeat; }
@@ -473,7 +471,7 @@ footer {
     display: inline-block;
     height: 40px;
     width: 48px;
-    background-image: url(/resource/logos-dark.png);
+    background-image: url(/resource/logos.png);
     background-size: auto 40px;
     background-position: -34px 0;
     background-repeat: no-repeat; }
@@ -485,7 +483,7 @@ footer {
     display: inline-block;
     height: 40px;
     width: 43px;
-    background-image: url(/resource/logos-dark.png);
+    background-image: url(/resource/logos.png);
     background-size: auto 40px;
     background-position: -82px 0;
     background-repeat: no-repeat; }
@@ -497,7 +495,7 @@ footer {
     display: inline-block;
     height: 40px;
     width: 35px;
-    background-image: url(/resource/logos-dark.png);
+    background-image: url(/resource/logos.png);
     background-size: auto 40px;
     background-position: -124px 0;
     background-repeat: no-repeat; }
